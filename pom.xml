@@ -8,13 +8,14 @@
 	<packaging>pom</packaging>
 	<description>定义所有模块的公共依赖包</description>
 	<properties>
-		<palmg.version>0.0.1-SNAPSHOT</palmg.version>
+		<palmg.version>0.0.2-SNAPSHOT</palmg.version>
 		<!-- vertx -->
 		<vertx.io.version>3.3.2</vertx.io.version>
 		<junit.version>4.12</junit.version>
 		<spring.version>4.3.1.RELEASE</spring.version>
 		<log4j.version>1.2.17</log4j.version>
 		<slf4j.version>1.7.18</slf4j.version>
+		<hazelcast.version>3.6.3</hazelcast.version>
 	</properties>
 	<!--依赖管理 -->
 	<dependencyManagement>
@@ -74,7 +75,7 @@
 			<dependency>
 				<groupId>com.hazelcast</groupId>
 				<artifactId>hazelcast</artifactId>
-				<version>${hazelcast.vertsion}</version>
+				<version>${hazelcast.version}</version>
 			</dependency>
 			<!-- end hazelcast -->
 
@@ -107,6 +108,19 @@
 				<artifactId>slf4j-log4j12</artifactId>
 				<version>${slf4j.version}</version>
 			</dependency>
+			
+			<!-- palmg -->	
+			<dependency>
+				<groupId>com.palmg</groupId>
+				<artifactId>palmg-utility</artifactId>
+				<version>${palmg.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.palmg</groupId>
+				<artifactId>palmg-cluster</artifactId>
+				<version>${palmg.version}</version>
+			</dependency>
+			
 		</dependencies>
 	</dependencyManagement>
 	<build>
