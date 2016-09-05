@@ -16,6 +16,7 @@
 		<log4j.version>1.2.17</log4j.version>
 		<slf4j.version>1.7.18</slf4j.version>
 		<hazelcast.version>3.6.3</hazelcast.version>
+		<google.inject.version>4.1.0</google.inject.version>
 	</properties>
 	<!--依赖管理 -->
 	<dependencyManagement>
@@ -38,6 +39,12 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-core</artifactId>
 				<version>${spring.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -78,6 +85,13 @@
 				<version>${hazelcast.version}</version>
 			</dependency>
 			<!-- end hazelcast -->
+			
+			<!-- google -->
+			<dependency>
+				<groupId>com.google.inject</groupId>
+				<artifactId>guice</artifactId>
+				<version>${google.inject.version}</version>
+			</dependency>
 
 			<!-- test -->
 			<dependency>
@@ -108,8 +122,8 @@
 				<artifactId>slf4j-log4j12</artifactId>
 				<version>${slf4j.version}</version>
 			</dependency>
-			
-			<!-- palmg -->	
+
+			<!-- palmg -->
 			<dependency>
 				<groupId>com.palmg</groupId>
 				<artifactId>palmg-utility</artifactId>
@@ -120,7 +134,7 @@
 				<artifactId>palmg-cluster</artifactId>
 				<version>${palmg.version}</version>
 			</dependency>
-			
+
 		</dependencies>
 	</dependencyManagement>
 	<build>
