@@ -9,7 +9,7 @@
 	<description>定义所有模块的公共依赖包</description>
 	<properties>
 		<palmg.version>0.0.2-SNAPSHOT</palmg.version>
-		<!-- vertx -->
+		<javax.inject.version>1</javax.inject.version>
 		<vertx.io.version>3.3.2</vertx.io.version>
 		<junit.version>4.12</junit.version>
 		<spring.version>4.3.1.RELEASE</spring.version>
@@ -21,7 +21,16 @@
 	<!--依赖管理 -->
 	<dependencyManagement>
 		<dependencies>
+			<!-- javax -->
+			<!-- 用于标准的jsr330规范，标记依赖注入工具，spring和guice已支持 -->
+			<dependency>
+				<groupId>javax.inject</groupId>
+				<artifactId>javax.inject</artifactId>
+				<version>${javax.inject.version}</version>
+			</dependency>
+
 			<!-- vertx -->
+			<!-- vertx是一个优秀的全异步轮训框架。底层的线程调度使用netty实现 -->
 			<dependency>
 				<groupId>io.vertx</groupId>
 				<artifactId>vertx-core</artifactId>
@@ -85,7 +94,7 @@
 				<version>${hazelcast.version}</version>
 			</dependency>
 			<!-- end hazelcast -->
-			
+
 			<!-- google -->
 			<dependency>
 				<groupId>com.google.inject</groupId>
