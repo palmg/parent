@@ -26,6 +26,9 @@
 		<hazelcast.version>3.6.3</hazelcast.version>
 		<google.inject.version>4.1.0</google.inject.version>
 		<java.version>1.8</java.version>
+		<!-- 指定在boot中使用thymeleaf的版本 -->
+		<thymeleaf.version>3.0.3.RELEASE</thymeleaf.version>
+		<thymeleaf-layout-dialect.version>2.2.1</thymeleaf-layout-dialect.version>
 	</properties>
 	<!--依赖管理 -->
 	<dependencyManagement>
@@ -109,6 +112,11 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-devtools</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-thymeleaf</artifactId>
 				<version>${spring.boot.version}</version>
 			</dependency>
 			<!-- end spring boot -->
